@@ -162,6 +162,7 @@ while Login is True:
 
         print()
         print("Congrats!!! You are now officially a user!!!")
+        login_status = "Valid User"
         Login = False
     else:
         print("That is not a valid option.")
@@ -249,3 +250,4 @@ while True:
         print("That is not a valid option.")
 
         print()
+
