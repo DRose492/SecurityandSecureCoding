@@ -209,25 +209,25 @@ while True:
         print(option)
 
     selection = input("Please select an option.")
-    if selection == "[1]":
+    if selection == "1":
         Time = Check_Hours()
         print(f"You have worked a total of {Time} hours this pay peroid")
         print()
-    elif selection == "[2]":
+    elif selection == "2":
         print("You work the following days this week")
         print(Check_Schedule())
         print()
-    elif selection == "[3]":
+    elif selection == "3":
         Request_Time_Off()
         print()
-    elif selection == "[4]":
+    elif selection == "4":
         if login_status == "Valid User":
             Request_Admin_Status()
             print()
         else:
             print("I can not give you what you already are.")
             print()
-    elif selection == "[5]":
+    elif selection == "5":
         if login_status == "Valid User":
             print("You are not authorized to use this function.")
             print()
@@ -235,16 +235,17 @@ while True:
             given_email = input("What is the email of the user you want to promote? ")
             Promote_User(given_email)
             print()
-    elif selection == "[6]":
+    elif selection == "6":
         if login_status == "Valid User":
             print("You are not authorized to use this function.")
             print()
         else:
             Remove_User()
             print()
-    elif selection == "[7]":
+    elif selection == "7":
         print("Have a good day!!!")
         exit()
     else:
         print("That is not a valid option.")
+
         print()
