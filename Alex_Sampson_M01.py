@@ -61,7 +61,7 @@ def Validation_Password(given_password, given_email): #This one is for validatin
             return login_status
     for admin in Admin.admin_registry:
         if admin.email == given_email and admin.password == given_password:
-            login_status = "Valid User"
+            login_status = "Valid Admin"
             return login_status
     print("This password does not match this email.")
     login_status = "Valid"
@@ -250,4 +250,5 @@ while True:
         print("That is not a valid option.")
 
         print()
+
 
