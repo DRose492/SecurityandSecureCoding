@@ -1,24 +1,20 @@
 README
-~~~~~~~~~~~~~
-This script is a simple login and role system demo in Python.
+~~~~~~~~~~~~~~~
+This Python script is a demo employee login system with role separation for Users and Admins. It enforces CIA principles:
+ * Confidentiality → email/password validation, lockouts after failed attempts.
+ * Integrity → password rules, promotion/removal functions restricted to Admins.
+ * Availability → simple menu system for users to check schedules, request time off, etc.
 
+App Logic
+~~~~~~~~~~~~~~~
+ * Users/Admins are stored in registries.
+ * Login verifies email + password before granting access.
+ * Failed password attempts lock accounts after 3 tries.
+ * Post-login, menus adapt by role (Admin gets extra tools).
+ * Preloaded Accounts for Testing:
 
-Features
-~~~~~~~~~~~~~
- * Create Users and Admins with email & password.
- * Login system with lockout after 3 failed attempts.
- * Sign-up process with password rules.
- * Menu options after login:
- * Check worked hours
- * Check weekly schedule
- * Request time off
- * Request admin status
- * Promote a user (Admin only)
- * Remove a user (Admin only)
- * Logout
+Test Logins
+~~~~~~~~~~~~~~~
+User → terydaman@email.com / TeryDaMan123
 
-Preloaded Accounts for Testing
-~~~~~~~~~~~~~
-User → Email: terydaman@email.com | Password: TeryDaMan123
-
-Admin → Email: hlaurence45@email.com | Password: G4rf23!:hHr9t6
+Admin → hlaurence45@email.com / G4rf23!:hHr9t6
