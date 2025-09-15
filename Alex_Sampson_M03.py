@@ -44,16 +44,19 @@ def hash_file(filename):
 Now to build the functions for ChaCha20
 """
 
-key = os.urandom(32)    # 256-bit key
-nonce = os.urandom(12)  # 96-bit nonce NOTE: In real applications, never reuse nonce with the same key!
-
 def encrypt(text):
+    key = os.urandom(32)    # 256-bit key
+    nonce = os.urandom(12)  # 96-bit nonce NOTE: In real applications, never reuse nonce with the same key!
     cipher = Cipher(algorithms.ChaCha20(key, nonce), mode=None, backend=default_backend())
     encryptor = cipher.encryptor()
     encrypted = encryptor.update(text.encode('utf-8'))
+    print(key)
+    print("this key is used to decript this code")
     return encrypted
 
 def decrypt(encrypted_bytes):
+    nonce = os.urandom(12)
+    key = input("Please type in your key ")
     cipher = Cipher(algorithms.ChaCha20(key, nonce), mode=None, backend=default_backend())
     decryptor = cipher.decryptor()
     decrypted = decryptor.update(encrypted_bytes)
@@ -79,7 +82,7 @@ def verify_signature(data, signature):
 """
 Now for the logic so that users can interact with the script
 """
-print("Welcome to the Crypto Console, Alex!")
+print("Please make a selection")
 
 while True:
     print("\nChoose an option:")
@@ -137,4 +140,5 @@ while True:
         break
 
     else:
+
         print("Invalid choice. Try again.")
