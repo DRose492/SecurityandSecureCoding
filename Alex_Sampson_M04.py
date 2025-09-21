@@ -1,5 +1,9 @@
 """
 A script to hash a text string or file into SHA-256 hash, encrypt it using the ChaCha20, mainly because it has mobile capabilities.
+
+This section below once auto-installed the required libraries for the script to function.
+At the recommendation of others, I have removed that system and created a function to check to see if the required functions were installed.
+I set their importation after the function so that the script doesn't error trying to import from libraries that haven't been verified to be there
 """
 import sys
 import hashlib
@@ -22,6 +26,12 @@ def ReqPackageCheck(packages):
         sys.exit(1)
 
 ReqPackageCheck(['cryptography', 'pycryptodome'])
+
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import ec
+from cryptography.exceptions import InvalidSignature
 """
 Now to create the functions for hashing strings and files
 """
@@ -142,3 +152,4 @@ while True:
     else:
 
         print("Invalid choice. Try again.")
+
